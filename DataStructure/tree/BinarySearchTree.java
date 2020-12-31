@@ -196,8 +196,8 @@ public class BinarySearchTree {
 			return;
 		} else {
 			System.out.print(root.val + ",");
-			printInOrder(root.left);
-			printInOrder(root.right);
+			printpreOrder(root.left);
+			printpreOrder(root.right);
 		}
 	}
 	

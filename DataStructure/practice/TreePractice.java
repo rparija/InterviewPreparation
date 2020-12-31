@@ -227,12 +227,13 @@ public class TreePractice {
 		while (!queue.isEmpty()) {
 			System.out.print(queue.peek().data + "-> ");
 			Tree node = queue.peek();
-			if (node.right != null) {
-				queue.add(node.right);
-			}
 			if (node.left != null) {
 				queue.add(node.left);
 			}
+			if (node.right != null) {
+				queue.add(node.right);
+			}
+			
 			queue.poll();
 		}
 		System.out.println();
@@ -297,6 +298,32 @@ public class TreePractice {
 		}
 		System.out.println();
 	}
+	
+	public static void spriralPrintingUsingStack(Tree rootNode)
+	{
+		Stack<Tree> s1= new Stack<Tree>();
+		Stack<Tree> s2= new Stack<Tree>();
+		s1.push(rootNode);
+		while (!s1.isEmpty())
+		{
+			System.out.print(s1.peek().data+ "-> ");
+			Tree node=s1.pop();
+			if(node.left!=null)
+			s2.push(node.left);
+			if(node.right!=null)
+			s2.push(node.right);
+			
+			while(!s2.isEmpty())
+			{
+				System.out.print(s2.peek().data+ "-> ");
+				Tree node1=s2.pop();
+				if(node1.right!=null)
+				s1.push(node1.right);
+				if(node1.left!=null)
+				s1.push(node1.left);
+			}
+		}
+	}
 
 	public static void main(String[] args) {
 		/*
@@ -321,7 +348,9 @@ public class TreePractice {
 		search(45);
 		search(25);
 		//delete(10);
-		deleteUsingRecursion(root, 30);
+		//deleteUsingRecursion(root, 30);
 		printIterativePostorder(root);
+		System.out.println("SpiralPrint:");
+		spriralPrintingUsingStack(root);
 	}
 }

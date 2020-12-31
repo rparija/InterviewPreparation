@@ -7,7 +7,7 @@ public class MatchingBrackets {
 
 	public static void main(String[] args) {
 		
-		String s="{[()]}}}";
+		String s="{[()]}";
 		char[] bracketArray=s.toCharArray();
 		HashMap<Character,Character> bracketMap= new HashMap<>();
 		bracketMap.put('{', '}');
@@ -15,9 +15,9 @@ public class MatchingBrackets {
 		bracketMap.put('(', ')');
 		Stack stack = new Stack<Character>();
 		
-		for(int i=0;i<bracketArray.length-1;i++)
+		for(int i=0;i<bracketArray.length;i++)
 		{
-			if(!stack.isEmpty() &&  bracketArray[i]==bracketMap.get(stack.peek()))
+			if(!stack.isEmpty() && bracketMap.get(stack.peek())!=null &&bracketArray[i]==bracketMap.get(stack.peek()))
 			{
 				stack.pop();
 			}else {
