@@ -25,11 +25,11 @@ public class FindTripletSumWhichIsCloseToTargetSum {
 			}
 		}
 		
-		for (int i : targetSumMap.values()) {
+	/*	for (int i : targetSumMap.values()) {
 			if(i>)
 			{
 				
 			}
-		}
+		}*/
 	}
 }

@@ -2,6 +2,8 @@ package arrays;
 
 import java.util.Arrays;
 
+import static java.lang.Character.getNumericValue;
+
 public class PracticeAnagram {
 
 	public static void main(String[] args) {
@@ -16,22 +18,22 @@ public class PracticeAnagram {
 		char [] anagramArray2=anagram2.toCharArray();
 		for(char c:anagramArray1)
 		{
-			if(array[Character.getNumericValue(c)]==0)
+			if(array[getNumericValue(c)]==0)
 			{
-				array[Character.getNumericValue(c)]=1;	
+				array[getNumericValue(c)]=1;
 			}else
 			{
-				array[Character.getNumericValue(c)]=0;	
+				array[getNumericValue(c)]=0;
 			}
 		}
 		for(char c:anagramArray2)
 		{
-			 if(array[Character.getNumericValue(c)]==1)
+			 if(array[getNumericValue(c)]==1)
 			{
-				array[Character.getNumericValue(c)]=0;
+				array[getNumericValue(c)]=0;
 			}else
 			{
-				array[Character.getNumericValue(c)]=1;	
+				array[getNumericValue(c)]=1;
 			}
 		}
 		for(int i:array)

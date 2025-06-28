@@ -20,6 +20,20 @@ public class ArraySortingClass {
 		}
 		
 		Arrays.stream(array).forEach(System.out::println);
+		int result=fibonacci(6);
+		System.out.println(result);
 	}
-	
+	public static int fibonacci(int i)
+	{
+		int j=0;
+		int k=1;
+		int sum=j+k;
+		for(int l=2;l<=i;l++)
+		{
+			sum=j+k;
+			j=k;
+			k=sum;
+		}
+		return sum;
+	}
 }
